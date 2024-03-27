@@ -18,7 +18,7 @@ public class OrderProcessingConsumer {
     private ObjectMapper objectMapper;
     private RestTemplate restTemplate;
     private PaymentRepository repository;
-    String USER_SREVICE_URL = "http://localhost:9393/users/";
+    String USER_SREVICE_URL = "http://USER-SERVICE/users/";
 
     public OrderProcessingConsumer(ObjectMapper objectMapper, RestTemplate restTemplate, PaymentRepository repository){
         this.objectMapper= objectMapper;
