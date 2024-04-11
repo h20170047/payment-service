@@ -16,6 +16,23 @@ spring:
   config:
     import: configserver:http://localhost:9595
 
+
+  cloud:
+    function:
+      definition: processOrder
+    stream:
+      kafka:
+        binder:
+          brokers: ${KAFKA_HOST:localhost}:${KAFKA_PORT:29092}
+      bindings:
+        processOrder-in-0:
+          destination: ecommerce-topic3
+          group: myGroup
+#      kafka:
+#        streams:
+#          binder:
+#            brokers: localhost:29092
+
 #eureka:
 #  client:
 #    service-url:
